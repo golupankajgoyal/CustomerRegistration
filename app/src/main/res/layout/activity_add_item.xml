@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColorHint="@color/colorGrey2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_username"
+                    android:hint="Name"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorGrey2"
+                    android:layout_height="wrap_content"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/colorGrey2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_address"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorGrey2"
+                    android:layout_height="wrap_content"
+                    android:hint="Address" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:textColorHint="@color/colorGrey2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_addhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorGrey2"
+                    android:inputType="number"
+                    android:hint="Aadhar No."/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="140dp"
+                    android:orientation="vertical"
+                    android:id="@+id/addhar_front_container">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/id_card"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/addhar_front_image"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_green2"
+                        android:elevation="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/addhar_front_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Front"
+                            android:gravity="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    />
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="140dp"
+                    android:orientation="vertical"
+                    android:id="@+id/addhar_back_container">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/id_card"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/addhar_back_image"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_green2"
+                        android:elevation="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/addhar_back_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Back"
+                            android:gravity="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/colorGrey2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_mobile"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorGrey2"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:hint="MobileNo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/colorGrey2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_employee_id"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorGrey2"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:hint="Employee Id" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginRight="20dp">
+
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:orientation="vertical"
+        android:id="@+id/image_container">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/user"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/photo"
+            android:contentDescription="TODO" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_green2"
+            android:elevation="10dp"
+            android:gravity="center">
+
+        <TextView
+            android:id="@+id/image_tv"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Image"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:orientation="vertical"
+        android:id="@+id/document_container">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/file"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/document"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_green2"
+            android:elevation="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/document_tv"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Document"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_green2"
+                android:elevation="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/txt_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="25dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

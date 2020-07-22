@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1e88e5"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.customerregistration.DetailsActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="#1e88e5">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:elevation="3dp"
+            android:transitionName="@string/transition_avatar" />
+
+    </FrameLayout>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/detail_scroll_view"
+    android:clipToPadding="false"
+    android:layout_height="wrap_content"
+    android:paddingTop="500dp">
+
+
+
+        <!-- some skeleton approximating text -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1e88e5">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#e0f7fa"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="40dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="16dp">
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/detail_top_margin"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_mrp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:padding="2dp"
+                android:text="Name :"
+                android:textColor="@color/colorBalck"
+                android:textSize="@dimen/detail_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:padding="2dp"
+                android:text="$250"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/detail_text_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_top_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_discount_price"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:padding="2dp"
+                    android:text="Address :"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_address"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:padding="2dp"
+                    android:text="Example Example Example Example"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/detail_top_margin"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_customer_id"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:padding="2dp"
+                    android:text="Customer Id :"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_customer_welfare_id"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:padding="2dp"
+                    android:text="$250"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_top_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_quantity_per_packet"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:padding="2dp"
+                    android:text="Aadhar No. :"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_addhar_no"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:padding="2dp"
+                    android:text="$250"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_top_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/addhar_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:padding="2dp"
+                    android:text="Aadhar(Front/Back) :"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/user"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/detail_addhar_front"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/file"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/detail_addhar_back"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/detail_top_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mobile_no"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:padding="2dp"
+                android:text="Mobile No. :"
+                android:textColor="@color/colorBalck"
+                android:textSize="@dimen/detail_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mobile_no_tv"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:padding="2dp"
+                android:text="$250"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/detail_text_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_top_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/employee_id"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:padding="2dp"
+                    android:text="Employee Id :"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/employee_id_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:padding="2dp"
+                    android:text="$250"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_top_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/document_image_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:padding="2dp"
+                    android:text="Document Image :"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="@dimen/detail_text_size"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/detail_document_image"
+                    android:layout_width="100dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/file"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="5dp"
+                    android:padding="2dp" />
+
+            </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+
+</ScrollView>
+</FrameLayout>

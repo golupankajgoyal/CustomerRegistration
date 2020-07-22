@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_text_size">18sp</dimen>
+    <dimen name="detail_top_margin">8dp</dimen>
+    <dimen name="init_scroll_up_distance">150dp</dimen>
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "658340093286",
+    "firebase_url": "https://employeewelfareregistration.firebaseio.com",
+    "project_id": "employeewelfareregistration",
+    "storage_bucket": "employeewelfareregistration.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658340093286:android:8557d72cc21db558697ca7",
+        "android_client_info": {
+          "package_name": "com.example.customerregistration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658340093286-32ska0ts2f8hni35alo7v33r62di0h3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG8tSD6VeR1w1QbUNrI0s-Icti-Zf1ZSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658340093286-32ska0ts2f8hni35alo7v33r62di0h3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
