@@ -8,7 +8,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +36,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,14 +48,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AddItemActivity extends AppCompatActivity {
+public class AddItemActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
     @BindView(R.id.ed_username)
     TextInputEditText name;
-
-    @BindView(R.id.ed_address)
-    TextInputEditText address;
 
     @BindView(R.id.ed_addhar)
     TextInputEditText addhar;
@@ -85,6 +87,16 @@ public class AddItemActivity extends AppCompatActivity {
     @BindView(R.id.ed_employee_id)
     TextInputEditText employeeId;
 
+    @BindView(R.id.ed_flat_no)
+    TextInputEditText flatNo;
+
+    @BindView(R.id.ed_society)
+    TextInputEditText societyName;
+
+    @BindView(R.id.ed_street)
+    TextInputEditText streetName;
+
+
     private Context context = this;
     private ProgressDialog loading;
     public static final int PICK_IMAGE_REQUEST = 1;
@@ -98,9 +110,12 @@ public class AddItemActivity extends AppCompatActivity {
     private String mStringAddharBackUrl;
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
-    private StorageTask mImageUploadTask;
-    private StorageTask mDocumentUploadTask;
     private String stringCustomerId;
+    private String totalCustomers = null;
+    private int check=0;
+    private Spinner spinner;
+    private String mThanaCode = null;
+    private String mThanaName = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,17 +127,29 @@ public class AddItemActivity extends AppCompatActivity {
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
 
+        spinner = (Spinner) findViewById(R.id.planets_spinner);
+
+        spinner.setOnItemSelectedListener(this);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.planets_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+
+
         img_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    openFileChooser(v);
+                openFileChooser(v);
             }
         });
 
         doc_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    openFileChooser(v);
+                openFileChooser(v);
             }
         });
 
@@ -146,19 +173,22 @@ public class AddItemActivity extends AppCompatActivity {
     @OnClick(R.id.txt_save)
     public void onViewClicked() {
         if (validation()) {
-            addItemToSheet();
+            getItems();
         }
     }
 
 
     public void addItemToSheet() {
 
-        loading = ProgressDialog.show(this, "Adding Item", "Please wait");
         final String mName = name.getText().toString().trim();
-        final String mAddress = address.getText().toString().trim();
+        final String mFlateNo = flatNo.getText().toString().trim();
+        final String mSociety = societyName.getText().toString().trim();
+        final String mStreetName = streetName.getText().toString().trim();
+        final String mAddress = "Flat No. " + mFlateNo + ", " + mSociety + ", "+mStreetName+", Thana - " + mThanaName
+                + ", Lucknow, UttarPradesh";
         final String mAddhar = addhar.getText().toString().trim();
         final String mMobile = mobile.getText().toString().trim();
-        final String mEmployeeId= employeeId.getText().toString().trim();
+        final String mEmployeeId = employeeId.getText().toString().trim();
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
@@ -170,8 +200,8 @@ public class AddItemActivity extends AppCompatActivity {
                         loading.dismiss();
                         Toast.makeText(AddItemActivity.this, response, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(AddItemActivity.this, RazorPayActivity.class);
-                        intent.putExtra("mobile",mMobile);
-                        intent.putExtra("customerId",stringCustomerId);
+                        intent.putExtra("mobile", mMobile);
+                        intent.putExtra("customerId", stringCustomerId);
                         startActivity(intent);
 
                     }
@@ -187,7 +217,8 @@ public class AddItemActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> parmas = new HashMap<>();
 
-                long customerId = (long) (Math.random()* 10000000000000000L);
+
+                long customerId = 8902749000000L + Long.parseLong(mThanaCode) * 10000L + Long.parseLong(totalCustomers);
 
                 stringCustomerId = String.valueOf(customerId);
                 //here we pass params
@@ -196,12 +227,12 @@ public class AddItemActivity extends AppCompatActivity {
                 parmas.put("address", mAddress);
                 parmas.put("addhar", mAddhar);
                 parmas.put("mobile", mMobile);
-                parmas.put("image",mStringImageUrl);
-                parmas.put("document",mStringDocumentUrl);
-                parmas.put("employeeId",mEmployeeId);
-                parmas.put("addharFront",mStringAddharBackUrl);
-                parmas.put("addharBack",mStringAddharFrontUrl);
-                parmas.put("welFareId",stringCustomerId);
+                parmas.put("image", mStringImageUrl);
+                parmas.put("document", mStringDocumentUrl);
+                parmas.put("employeeId", mEmployeeId);
+                parmas.put("addharFront", mStringAddharBackUrl);
+                parmas.put("addharBack", mStringAddharFrontUrl);
+                parmas.put("welFareId", stringCustomerId);
                 return parmas;
             }
         };
@@ -215,6 +246,50 @@ public class AddItemActivity extends AppCompatActivity {
 
         queue.add(stringRequest);
 
+    }
+
+    private void getItems() {
+
+        loading = ProgressDialog.show(this, "Adding Item", "Please wait");
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                "https://script.google.com/macros/s/AKfycbw6lqynZdpWevCLJPB6rq47C0CMwQDAyZW5AbIf97Kf0P1luLob/exec?action=test",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        parseItems(response);
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, "Error in data loading", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        int socketTimeOut = 50000;
+        RetryPolicy policy = new DefaultRetryPolicy(socketTimeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+
+        stringRequest.setRetryPolicy(policy);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(stringRequest);
+
+    }
+
+    private void parseItems(String jsonResposnce) {
+
+
+        try {
+
+            JSONObject jobj = new JSONObject(jsonResposnce);
+            totalCustomers = jobj.getString("items").trim();
+
+        } catch (JSONException ex) {
+            ex.printStackTrace();
+        }
+        addItemToSheet();
     }
 
 
@@ -244,18 +319,18 @@ public class AddItemActivity extends AppCompatActivity {
                             fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    Uri downloadUri=uri;
-                                    if(identity==PICK_ADDHAR_FRONT_REQUEST){
-                                        mStringAddharFrontUrl=downloadUri.toString().trim();
+                                    Uri downloadUri = uri;
+                                    if (identity == PICK_ADDHAR_FRONT_REQUEST) {
+                                        mStringAddharFrontUrl = downloadUri.toString().trim();
                                         addharFrontTv.setVisibility(View.GONE);
-                                    }else if (identity==PICK_ADDHAR_BACK_REQUEST){
-                                        mStringAddharBackUrl=downloadUri.toString().trim();
+                                    } else if (identity == PICK_ADDHAR_BACK_REQUEST) {
+                                        mStringAddharBackUrl = downloadUri.toString().trim();
                                         addharBackTv.setVisibility(View.GONE);
-                                    }else  if (identity==PICK_IMAGE_REQUEST){
-                                        mStringImageUrl=downloadUri.toString().trim();
+                                    } else if (identity == PICK_IMAGE_REQUEST) {
+                                        mStringImageUrl = downloadUri.toString().trim();
                                         img_tv.setVisibility(View.GONE);
-                                    }else if (identity==PICK_DOCUMENT_REQUEST){
-                                        mStringDocumentUrl=downloadUri.toString().trim();
+                                    } else if (identity == PICK_DOCUMENT_REQUEST) {
+                                        mStringDocumentUrl = downloadUri.toString().trim();
                                         doc_tv.setVisibility(View.GONE);
                                     }
                                     Upload upload = new Upload(uri.toString(), "Enter Anything");
@@ -267,18 +342,18 @@ public class AddItemActivity extends AppCompatActivity {
                             Toast.makeText(AddItemActivity.this, "Upload Successful", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(AddItemActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(AddItemActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
 //                    for showing progress
 //                    double progress=(100.0* taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount( ));
 //                    mProgressBar.setProgress((int)progress);
-                        }
-                    });
+                }
+            });
         } else {
             Toast.makeText(AddItemActivity.this, "Image Url is Empty", Toast.LENGTH_SHORT).show();
         }
@@ -323,8 +398,8 @@ public class AddItemActivity extends AppCompatActivity {
                     .load(mImageUri)
                     .into(document);
             uploadFile(PICK_DOCUMENT_REQUEST);
-        } else if(requestCode == PICK_ADDHAR_FRONT_REQUEST && resultCode == RESULT_OK
-                && data != null && data.getData() != null){
+        } else if (requestCode == PICK_ADDHAR_FRONT_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
             mImageUri = data.getData();
             Toast.makeText(AddItemActivity.this, "Aadhar Front Selected", Toast.LENGTH_SHORT).show();
             Glide.with(this)
@@ -332,8 +407,8 @@ public class AddItemActivity extends AppCompatActivity {
                     .into(addharFrontImage);
             uploadFile(PICK_ADDHAR_FRONT_REQUEST);
 
-        }else if(requestCode == PICK_ADDHAR_BACK_REQUEST && resultCode == RESULT_OK
-                && data != null && data.getData() != null){
+        } else if (requestCode == PICK_ADDHAR_BACK_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
             mImageUri = data.getData();
             Toast.makeText(AddItemActivity.this, "Aadhar Back Selected", Toast.LENGTH_SHORT).show();
             Glide.with(this)
@@ -346,40 +421,56 @@ public class AddItemActivity extends AppCompatActivity {
     public boolean validation() {
 
 
-
         if (name.getText().toString().isEmpty()) {
             name.setError("Enter Name");
             return false;
         }
-        if (address.getText().toString().isEmpty()) {
-            address.setError("Enter Address");
+
+        if (flatNo.getText().toString().isEmpty()) {
+            flatNo.setError("Enter Flat No.");
             return false;
         }
+
+        if (societyName.getText().toString().isEmpty()) {
+            societyName.setError("Enter Society Name");
+            return false;
+        }
+
+        if (streetName.getText().toString().isEmpty()) {
+            streetName.setError("Enter Street Name");
+            return false;
+        }
+
+        if (check==0) {
+            Toast.makeText(context,"Select District",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
         if (addhar.getText().toString().isEmpty()) {
             addhar.setError("Enter Aadhar No.");
             return false;
         }
 
-        if (mobile.getText().toString().isEmpty() || !validatePhoneNumber(mobile.getText().toString()) ) {
+        if (mobile.getText().toString().isEmpty() || !validatePhoneNumber(mobile.getText().toString())) {
             mobile.setError("Enter Mobile No.");
             return false;
         }
-        if (mStringImageUrl==null) {
-            Toast.makeText(AddItemActivity.this,"Upload Photo",Toast.LENGTH_SHORT).show();
+        if (mStringImageUrl == null) {
+            Toast.makeText(AddItemActivity.this, "Upload Photo", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        if (mStringDocumentUrl==null) {
-            Toast.makeText(AddItemActivity.this,"Upload Document", Toast.LENGTH_SHORT).show();
+        if (mStringDocumentUrl == null) {
+            Toast.makeText(AddItemActivity.this, "Upload Document", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        if (mStringAddharBackUrl==null) {
-            Toast.makeText(AddItemActivity.this,"Upload Aadhar Back Image", Toast.LENGTH_SHORT).show();
+        if (mStringAddharBackUrl == null) {
+            Toast.makeText(AddItemActivity.this, "Upload Aadhar Back Image", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (mStringAddharFrontUrl==null) {
-            Toast.makeText(AddItemActivity.this,"Upload Aadhar Front Image", Toast.LENGTH_SHORT).show();
+        if (mStringAddharFrontUrl == null) {
+            Toast.makeText(AddItemActivity.this, "Upload Aadhar Front Image", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -396,6 +487,29 @@ public class AddItemActivity extends AppCompatActivity {
         else if (phoneNo.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}")) return true;
             //return false if nothing matches the input
         else return false;
+
+    }
+
+    private static boolean validateThanaCode(String thanaCode) {
+        if (thanaCode.matches("\\d{2}")) return true;
+        else return false;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        if(position<10 && position>0){
+            mThanaCode="0"+position;
+            check=1;
+        }else if(position>=10){
+            mThanaCode=""+position;
+            check=1;
+        }
+        mThanaName=spinner.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }

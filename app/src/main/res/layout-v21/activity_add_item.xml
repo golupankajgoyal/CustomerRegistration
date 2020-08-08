@@ -21,6 +21,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:textColorHint="@color/colorGrey2">
 
@@ -33,21 +34,136 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
                 android:layout_marginTop="15dp"
-                android:textColorHint="@color/colorGrey2">
+                android:padding="2dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorBlack"
+                android:text="Address"
+                android:textSize="16dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_address"
-                    android:layout_width="match_parent"
-                    android:textColor="@color/colorGrey2"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:hint="Address" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="@color/colorGrey2">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_flat_no"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorGrey2"
+                        android:layout_height="wrap_content"
+                        android:hint="Flat No." />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="@color/colorGrey2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_society"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorGrey2"
+                        android:layout_height="wrap_content"
+                        android:hint="Society" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="@color/colorGrey2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_street"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorGrey2"
+                        android:layout_height="wrap_content"
+                        android:hint="Street" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/planets_spinner"
+                    android:layout_width="0dp"
+                    android:spinnerMode="dialog"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="match_parent" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="@color/colorGrey2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_district"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorGrey2"
+                        android:layout_height="wrap_content"
+                        android:text="Lucknow"
+                        android:hint="District"
+                        android:focusable="false"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:textColorHint="@color/colorGrey2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_state"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorGrey2"
+                        android:layout_height="wrap_content"
+                        android:text="UttarPradesh"
+                        android:hint="State"
+                        android:focusable="false"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:background="@color/colorBlack"/>-->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -30,7 +30,7 @@
             android:textSize="25dp"
             android:text="Example"
             android:id="@+id/name_tv"
-            android:textColor="@color/colorBalck"/>
+            android:textColor="@color/colorBlack"/>
 
     </LinearLayout>
     <LinearLayout
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:padding="2dp"
             android:text="Customer Id :"
-            android:textColor="@color/colorBalck"
+            android:textColor="@color/colorBlack"
             android:textSize="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/amount_container"/>
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:padding="2dp"
             android:text="Balance :"
-            android:textColor="@color/colorBalck"
+            android:textColor="@color/colorBlack"
             android:textSize="20dp"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,4 +1,50 @@
 <resources>
     <string name="app_name">Customer Registration</string>
     <string name="transition_avatar">avatar</string>
+    <string-array name="planets_array">
+        <item>Select Thana</item>
+        <item>ALIGANJ</item>
+        <item>ALAMBAGH</item>
+        <item>AMINABAD</item>
+        <item>ASHIYANA</item>
+        <item>BAZARKHALA</item>
+        <item>BANTHARA</item>
+        <item>BAKSHI KA TALAB</item>
+        <item>CHOWK</item>
+        <item>CANTT</item>
+        <item>CHINHAT</item>
+        <item>GOMTI NAGAR</item>
+        <item>GUDUMBA</item>
+        <item>GAZIPUR</item>
+        <item>GAUTAM PALLI</item>
+        <item>GOSAIGANJ</item>
+        <item>HASSANGANJ</item>
+        <item>HAZRATGANJ</item>
+        <item>HUSSAINGANJ</item>
+        <item>INDIRA NAGAR</item>
+        <item>INTAUNJA</item>
+        <item>JANKIPURAM</item>
+        <item>QAISERBAGH</item>
+        <item>KRISHNA NAGAR</item>
+        <item>KAKORI</item>
+        <item>MAHANAGAR</item>
+        <item>MAHILA THANA</item>
+        <item>MANAK NAGAR</item>
+        <item>MOHANLALGANJ</item>
+        <item>MANDIYAON</item>
+        <item>MALIHABAD</item>
+        <item>MALL</item>
+        <item>NAKA</item>
+        <item>NAGRAM</item>
+        <item>NIGOHAN</item>
+        <item>SAADATGANJ</item>
+        <item>SAROJNI NAGAR</item>
+        <item>TALKATORA</item>
+        <item>THAKURGANJ</item>
+        <item>VIKAS NAGAR</item>
+        <item>WAZEERGANJ</item>
+        <item>PARA</item>
+        <item>P.G.I.</item>
+        <item>VIBHUTI KHAND</item>
+    </string-array>
 </resources>

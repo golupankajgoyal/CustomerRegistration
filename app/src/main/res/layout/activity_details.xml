@@ -72,7 +72,7 @@
                 android:layout_marginRight="10dp"
                 android:padding="2dp"
                 android:text="Name :"
-                android:textColor="@color/colorBalck"
+                android:textColor="@color/colorBlack"
                 android:textSize="@dimen/detail_text_size"
                 android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
                     android:layout_marginRight="10dp"
                     android:padding="2dp"
                     android:text="Address :"
-                    android:textColor="@color/colorBalck"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/detail_text_size"
                     android:textStyle="bold" />
 
@@ -134,7 +134,7 @@
                     android:layout_marginRight="10dp"
                     android:padding="2dp"
                     android:text="Customer Id :"
-                    android:textColor="@color/colorBalck"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/detail_text_size"
                     android:textStyle="bold" />
 
@@ -165,7 +165,7 @@
                     android:layout_marginRight="10dp"
                     android:padding="2dp"
                     android:text="Aadhar No. :"
-                    android:textColor="@color/colorBalck"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/detail_text_size"
                     android:textStyle="bold" />
 
@@ -195,7 +195,7 @@
                     android:layout_marginRight="10dp"
                     android:padding="2dp"
                     android:text="Aadhar(Front/Back) :"
-                    android:textColor="@color/colorBalck"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/detail_text_size"
                     android:textStyle="bold" />
 
@@ -243,7 +243,7 @@
                 android:layout_marginRight="10dp"
                 android:padding="2dp"
                 android:text="Mobile No. :"
-                android:textColor="@color/colorBalck"
+                android:textColor="@color/colorBlack"
                 android:textSize="@dimen/detail_text_size"
                 android:textStyle="bold" />
 
@@ -274,7 +274,7 @@
                     android:layout_marginRight="10dp"
                     android:padding="2dp"
                     android:text="Employee Id :"
-                    android:textColor="@color/colorBalck"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/detail_text_size"
                     android:textStyle="bold" />
 
@@ -304,7 +304,7 @@
                     android:layout_marginRight="10dp"
                     android:padding="2dp"
                     android:text="Document Image :"
-                    android:textColor="@color/colorBalck"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/detail_text_size"
                     android:textStyle="bold" />
 

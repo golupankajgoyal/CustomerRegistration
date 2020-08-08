@@ -15,7 +15,7 @@
         android:textSize="40dp"
         android:gravity="center_horizontal"
         android:text="Wallet"
-        android:textColor="@color/colorBalck"
+        android:textColor="@color/colorBlack"
         android:layout_marginTop="80dp"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -110,7 +110,7 @@
             android:layout_below="@+id/wallet_card"
             android:id="@+id/add_balance_image"
             android:background="@drawable/circle"
-            android:src="@drawable/iconfinder_plus_172525"/>
+            android:src="@drawable/newplus"/>
 
 
     <TextView

@@ -24,7 +24,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:src="@drawable/iconfinder_plus_172525"
+        android:src="@drawable/newplus"
         app:pressedTranslationZ="12dp"/>
 
 </RelativeLayout>
