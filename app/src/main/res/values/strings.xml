@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Customer Registration</string>
     <string name="transition_avatar">avatar</string>
+    <string name="password">Password</string>
     <string-array name="planets_array">
         <item>Select Thana</item>
         <item>ALIGANJ</item>

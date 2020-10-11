@@ -14,4 +14,8 @@
         android:icon="@drawable/wallet"
         android:title="My Wallet"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/logOut"
+        android:title="Log Out"
+        app:showAsAction="never"/>
 </menu>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#1e88e5"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.customerregistration.DetailsActivity">
+    tools:context="com.digiflying.customerregistration.DetailsActivity">
 
 
     <FrameLayout

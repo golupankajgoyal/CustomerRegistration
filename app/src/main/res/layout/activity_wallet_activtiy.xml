@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1e88e5"
-    tools:context="com.example.customerregistration.WalletActivtiy">
+    tools:context="com.digiflying.customerregistration.WalletActivtiy">
 
     <TextView
         android:layout_width="match_parent"

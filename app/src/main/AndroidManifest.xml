@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.customerregistration">
+    package="com.digiflying.customerregistration">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,11 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WalletActivtiy"/>
+        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".WalletActivtiy" />
         <activity android:name=".RazorPayActivity" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".AddItemActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +28,7 @@
 
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_NmBRVRow06jNCh" />
+            android:value="rzp_live_S25T9nsELaS9Qz" />
     </application>
 
 </manifest>

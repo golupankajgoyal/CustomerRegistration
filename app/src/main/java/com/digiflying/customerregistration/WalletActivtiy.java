@@ -1,4 +1,4 @@
-package com.example.customerregistration;
+package com.digiflying.customerregistration;
 
 import android.app.ProgressDialog;
 import android.content.Context;

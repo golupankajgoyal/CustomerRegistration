@@ -1,4 +1,4 @@
-package com.example.customerregistration;
+package com.digiflying.customerregistration;
 
 import android.view.View;
 import android.widget.ImageView;

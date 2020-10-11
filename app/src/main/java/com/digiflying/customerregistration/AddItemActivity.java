@@ -1,4 +1,4 @@
-package com.example.customerregistration;
+package com.digiflying.customerregistration;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -373,7 +373,6 @@ public class AddItemActivity extends AppCompatActivity implements AdapterView.On
         } else if (view.getId() == R.id.addhar_back_tv) {
             startActivityForResult(intent, PICK_ADDHAR_BACK_REQUEST);
         }
-
     }
 
     @Override

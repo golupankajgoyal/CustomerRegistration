@@ -1,4 +1,4 @@
-package com.example.customerregistration;
+package com.digiflying.customerregistration;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -24,6 +24,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context=this;
     private ArrayList<ItemData> customersList;
     private MenuItem walletItem;
+    private MenuItem logOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(){
         Intent intent = new Intent(context,AddItemActivity.class);
         startActivity(intent);
+        finish();
     }
 
     void filter(String text){
@@ -156,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         MenuItem searchItem= menu.findItem(R.id.search);
 
         walletItem = menu.findItem(R.id.wallet);
+        logOut=menu.findItem(R.id.logOut);
         SearchView searchView=(SearchView)searchItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -177,6 +181,15 @@ public class MainActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.wallet){
             Intent intent = new Intent(MainActivity.this,WalletActivtiy.class);
             startActivity(intent);
+            finish();
+        }
+
+        if(item.getItemId()==R.id.logOut){
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(this,"LogOut Successful",Toast.LENGTH_SHORT).show();
+                Intent inent = new Intent(this, LogInActivity.class);
+                startActivity(inent);
+                finish();
         }
         return super.onOptionsItemSelected(item);
     }

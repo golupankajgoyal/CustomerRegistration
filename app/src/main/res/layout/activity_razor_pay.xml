@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_container"
-    tools:context="com.example.customerregistration.RazorPayActivity">
+    tools:context="com.digiflying.customerregistration.RazorPayActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
