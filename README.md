@@ -5,27 +5,15 @@
 <h1 align=center>CustomerRegistration</h1>
 An Android application developed using Java as a core programming language. Customers can do their registration using this application. After registration, a customer Id is auto-generated which can be used later on for accessing their wallet details. The App uses Google spreadsheets as a realtime database for storing all the details of customers in a tabular form. It also uses Firebase for cloud storage and authentication. It has awallet system including Razorpay payment gateway through which customers can do online payments. Registered customers can check their wallet balance, add money to the wallet by using their customer id. It includes a search bar for searching the customers by their name and contact number. It includes an attractive UI and animation for displaying details
 
- <div class="row">
-  <div class="column">
-    <img src="media/scr1.jpg" alt="first" hspace="1" vspace="5" width="220" height="400">
-  </div>
-  <div class="column">
-    <img src="media/scr2.jpg" alt="second" hspace="1" vspace="5" width="220" height="400">
-  </div>
-  <div class="column">
-    <img src="media/scr3.jpg" alt="third" hspace="1" vspace="5" width="220" height="400">
-  </div>
-  <div class="column">
-    <img src="media/scr4.jpg" alt="fourth" hspace="1" vspace="5" width="220" height="400">
-  </div>
-</div> 
+<p align="center">
+  <img src="media/screenshot.JPG" title="Screenshot">
+</p>
 
 <p align="left">
 <a href="https://play.google.com/store/apps/details?id=com.digiflying.customerregistration">
 <img src="/media/google_play.png" alt="Google Play" width="300" height="120">
 </a>
 </p>
-
 ## Goals Achieved
 1. Integrated an online payment gateway using Razorpay.
 2. Applied search bar for ease of searching process.
