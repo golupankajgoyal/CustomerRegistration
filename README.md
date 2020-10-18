@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/media/app_icon.png" title="App Logo">
+  <img src="media/app_icon.png" title="App Logo">
 </p>
 
 <h1 align=center>CustomerRegistration</h1>
@@ -7,16 +7,16 @@ An Android application developed using Java as a core programming language. Cust
 
  <div class="row">
   <div class="column">
-    <img src="/media/scr1.jpg" alt="first" hspace="3" vspace="3" width="230" height="500">
+    <img src="media/scr1.jpg" alt="first" hspace="1" vspace="5" width="220" height="400">
   </div>
   <div class="column">
-    <img src="/media/scr2.jpg" alt="second" hspace="3" vspace="3" width="230" height="500">
+    <img src="media/scr2.jpg" alt="second" hspace="1" vspace="5" width="220" height="400">
   </div>
   <div class="column">
-    <img src="/media/scr3.jpg" alt="third" hspace="3" vspace="3" width="230" height="500">
+    <img src="media/scr3.jpg" alt="third" hspace="1" vspace="5" width="220" height="400">
   </div>
   <div class="column">
-    <img src="/media/scr4.jpg" alt="fourth" hspace="3" vspace="3" width="230" height="500">
+    <img src="media/scr4.jpg" alt="fourth" hspace="1" vspace="5" width="220" height="400">
   </div>
 </div> 
 
