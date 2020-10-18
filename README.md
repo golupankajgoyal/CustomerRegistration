@@ -9,11 +9,12 @@ An Android application developed using Java as a core programming language. Cust
   <img src="media/screenshot.JPG" title="Screenshot">
 </p>
 
-<p align="left">
+<p align="center">
 <a href="https://play.google.com/store/apps/details?id=com.digiflying.customerregistration">
 <img src="/media/google_play.png" alt="Google Play" width="300" height="120">
 </a>
 </p>
+
 ## Goals Achieved
 1. Integrated an online payment gateway using Razorpay.
 2. Applied search bar for ease of searching process.
